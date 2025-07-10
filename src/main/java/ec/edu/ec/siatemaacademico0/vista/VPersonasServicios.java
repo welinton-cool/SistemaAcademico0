@@ -4,50 +4,22 @@
  */
 package ec.edu.ec.siatemaacademico0.vista;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import ec.edu.ec.siatemaacademico0.controlador.ControladorPersonalServicios;
 
 /**
  *
  * @author KARLA
  */
-public class VentanaSeleccion extends javax.swing.JFrame {
+public class VPersonasServicios extends javax.swing.JFrame {
+
+    private ControladorPersonalServicios controladorPersonalServicios;
 
     /**
-     * Creates new form VentanaSeleccion
+     * Creates new form VPersonasServicio
      */
-    public VentanaSeleccion() {
+    public VPersonasServicios() {
         initComponents();
-        /*setTitle("Menú Principal");
-        setSize(400, 150);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);*/
-
-        //combo = new JComboBox<>(new String[]{"Selecciona una vista", "Inicio", "Datos", "Resumen"});
-        cmbEleccion.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                String seleccion = (String) cmbEleccion.getSelectedItem();
-                switch (seleccion) {
-                    case "Personal Servicio":
-                        new VPersonasServicios().setVisible(true);
-                        break;
-                    case "Persona Invitada":
-                        new VPersonasInvitadas().setVisible(true);
-                        break;
-                    case "Estudiante":
-                        new VEstudiantes().setVisible(true);
-                        break;
-                    case "Profesor":
-                        new VProfesores().setVisible(true);
-                        break;
-                     case "Decano":
-                        new VDecano().setVisible(true);
-                        break;
-                }
-            }
-        });
-        add(cmbEleccion);
-    
+        controladorPersonalServicios = new ControladorPersonalServicios(this);
     }
 
     /**
@@ -78,7 +50,7 @@ public class VentanaSeleccion extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables

@@ -8,6 +8,6 @@ package ec.edu.ec.siatemaacademico0.controlador;
  *
  * @author KARLA
  */
-public class ControladorPersonalnvitada {
+public class ControladorPersonas {
     
 }

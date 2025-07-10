@@ -8,6 +8,9 @@ package ec.edu.ec.siatemaacademico0.profesores;
  *
  * @author KARLA
  */
-public class Escalafon {
+public enum Escalafon {
     
+    PRINCIPAL, 
+    AGREGADO,
+    AUXILIAR;
 }
