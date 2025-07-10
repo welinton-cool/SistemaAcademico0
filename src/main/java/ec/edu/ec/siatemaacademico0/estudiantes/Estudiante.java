@@ -9,14 +9,14 @@ package ec.edu.ec.siatemaacademico0.estudiantes;
  * @author HP
  */
 public class Estudiante extends PersonaInstitucional{
-     private int codigo;
+    //Atributos
+    private int codigo;
 
-    public Estudiante(int codigo, String correoInstitucional, int id, String nombre, String correoPersonal, String cedula) {
-        super(correoInstitucional, id, nombre, correoPersonal, cedula);
+    public Estudiante(int codigo, String correoInstitucional, String nombre, int id, String correo, String cedula) {
+        super(correoInstitucional, nombre, id, correo, cedula);
         this.codigo = codigo;
     }
-  
-    
+
     public int getCodigo() {
         return codigo;
     }
@@ -32,16 +32,9 @@ public class Estudiante extends PersonaInstitucional{
 
     
     
-   public void imprimir() {
-        System.out.println("----- Estudiante -----");
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Cédula: " + cedula);
-         String CorreoPersonal = null;
-        
-        System.out.println("CorreoPersonal: " + CorreoPersonal);
+    
 }
-}
+
 
     
     
-}

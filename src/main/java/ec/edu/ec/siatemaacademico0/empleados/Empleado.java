@@ -8,26 +8,33 @@ package ec.edu.ec.siatemaacademico0.empleados;
  *
  * @author HP
  */
-public class Empleado extends PersonaInstitucional{
+public  class Empleado extends PersonaInstitucional{
     
+    //Atributos
     private double sueldo;
 
-    public Empleado(double sueldo, String correoInstitucional, int id, String nombre, String correoPersonal, String cedula) {
-        super(correoInstitucional, id, nombre, correoPersonal, cedula);
+    //Constructor
+    public Empleado(double sueldo, String correoInstitucional, String nombre, int id, String correo, String cedula) {
+        super(correoInstitucional, nombre, id, correo, cedula);
         this.sueldo = sueldo;
     }
+
+    public double getSueldo() {
+        return sueldo;
+    }
+
+    public void setSueldo(double sueldo) {
+        this.sueldo = sueldo;
+    }
+    
+    // public abstract boolean verificarCedula ();
 
     @Override
     public String toString() {
         return "Empleado{" + "sueldo=" + sueldo + '}';
     }
-
+   
     
-    public void imprimir() {
-        System.out.println("----- Empleado -----");
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Cédula: " + cedula);
-        System.out.println("CorreoPersonal: " + correoPersonal);
-    }
+    
     
 }

@@ -13,10 +13,17 @@ import ec.edu.ec.siatemaacademico0.personalacademico.PersonalAcademico;
 public class Decano extends PersonalAcademico {
     private String nivelJerarquico; 
 
-    public Decano(String nivelJerarquico, double sueldo, String correoInstitucional, String nombre, int id, String correo, String cedula) {
-        super(sueldo, correoInstitucional, nombre, id, correo, cedula);
+    public Decano(String nivelJerarquico, double sueldo, String correoInstitucional, int id, String nombre, String correoPersonal, String cedula) {
+        super(sueldo, correoInstitucional, id, nombre, correoPersonal, cedula);
         this.nivelJerarquico = nivelJerarquico;
     }
+
+ 
+    
+
+  
+        this.nivelJerarquico = nivelJerarquico;
+    
 
     
 
@@ -36,3 +43,6 @@ public class Decano extends PersonalAcademico {
                 '}';
     }
 }
+
+
+
