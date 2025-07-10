@@ -4,6 +4,8 @@
  */
 package ec.edu.ec.siatemaacademico0.estudiantes;
 
+import ec.edu.ec.siatemaacademico0.personalinstitucional.PersonaInstitucional;
+
 /**
  *
  * @author HP
