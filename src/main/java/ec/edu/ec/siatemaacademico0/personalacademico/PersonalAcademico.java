@@ -12,8 +12,11 @@ import ec.edu.ec.siatemaacademico0.empleados.Empleado;
  */
 public class PersonalAcademico extends Empleado {
 
-    public PersonalAcademico(double sueldo, String correoInstitucional, int id, String nombre, String correoPersonal, String cedula) {
-        super(sueldo, correoInstitucional, id, nombre, correoPersonal, cedula);
+    public PersonalAcademico(double sueldo, String correoInstitucional, String nombre, int id, String correo, String cedula) {
+        super(sueldo, correoInstitucional, nombre, id, correo, cedula);
+    }
+
+   
     }
 
     
@@ -23,7 +26,4 @@ public class PersonalAcademico extends Empleado {
     public String toString() {
         return "personalAcademico{" + super.toString()+'}';
     }
-    
-    
-    
-}
+   

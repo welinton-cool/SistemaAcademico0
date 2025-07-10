@@ -9,5 +9,9 @@ package ec.edu.ec.siatemaacademico0.controlador;
  * @author HP
  */
 public class ControladorPersonalAcademico {
+
+    public static void procesoControladorPersonalAcademico() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

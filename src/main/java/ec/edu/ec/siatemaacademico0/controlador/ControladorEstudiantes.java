@@ -7,6 +7,7 @@ package ec.edu.ec.siatemaacademico0.controlador;
 import ec.edu.ec.siatemaacademico0.estudiantes.Estudiante;
 import ec.edu.ec.siatemaacademico0.estudiantes.Estudiantes;
 import ec.edu.ec.siatemaacademico0.estudiantes.IEstudiantes;
+import ec.edu.ec.siatemaacademico0.vista.NotificadorMensajes;
 import ec.edu.ec.siatemaacademico0.vista.VEstudiantes;
 
 /**
@@ -14,13 +15,17 @@ import ec.edu.ec.siatemaacademico0.vista.VEstudiantes;
  * @author HP
  */
 public class ControladorEstudiantes {
+
+    public static void controladorEstudisnates() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
    private VEstudiantes vistaEstudiantes;
-    private NotificadorMensaje notificadorMensaje;
+    private NotificadorMensajes notificadorMensajes;
     private IEstudiantes iEstudiantes;
 
     public ControladorEstudiantes(VEstudiantes vistaEstudiantes) {
         this.vistaEstudiantes = vistaEstudiantes;
-        this.notificadorMensaje = new NotificadorMensaje();
+        this.notificadorMensajes = new NotificadorMensajes();
         this.iEstudiantes = new Estudiantes(10);
     }
 
@@ -43,13 +48,13 @@ public class ControladorEstudiantes {
             );
             boolean agregar = iEstudiantes.agregarEstudiantes(nuevoEstudiante);
             if (agregar == true) {
-                notificadorMensaje.mostrarMensaje("Estudiante Agregado Exito");
+                notificadorMensajes.mostrarMensajes("Estudiante Agregado Exito");
                 iEstudiantes.imprimirDato();
                 
             }
         } catch (Exception e) {
             e.printStackTrace();
-            notificadorMensaje.mostrarMensaje("Error al agregar el estudiante");
+            notificadorMensajes.mostrarMensaje("Error al agregar el estudiante");
         }
     }
 
@@ -58,7 +63,7 @@ public class ControladorEstudiantes {
             int iDEstudiante = Integer.parseInt(vistaEstudiantes.getBuscar());
             Estudiante estudianteBuscado = iEstudiantes.buscarEstudiante(iDEstudiante);
             if (estudianteBuscado != null) {
-                 notificadorMensaje.mostrarMensaje("Estudiante encontrado");
+                 notificadorMensajes.mostrarMensaje("Estudiante encontrado");
                  vistaEstudiantes.setCedula(estudianteBuscado.getCedula());
                  vistaEstudiantes.setCodigo(String.valueOf(estudianteBuscado.getCodigo()));
                  vistaEstudiantes.setCorreo(estudianteBuscado.getCorreo());
@@ -68,10 +73,10 @@ public class ControladorEstudiantes {
                 
                 
             }else{
-                notificadorMensaje.mostrarMensaje("Estudiante no encontrado");
+                notificadorMensajes.mostrarMensaje("Estudiante no encontrado");
             }
         } catch (Exception e) {
-            notificadorMensaje.mostrarMensaje("Error al buscar el estudiante verifique que el codigo este correcto");
+            notificadorMensajes.mostrarMensaje("Error al buscar el estudiante verifique que el codigo este correcto");
         }
     }
 
@@ -81,10 +86,10 @@ public class ControladorEstudiantes {
             Estudiante estudianteBuscado = iEstudiantes.buscarEstudiante(iDEstudiante);
             if (estudianteBuscado != null) {
                 iEstudiantes.eliminarEstudiante(iDEstudiante);
-                notificadorMensaje.mostrarMensaje("Estudiante eliminado");
+                notificadorMensajes.mostrarMensaje("Estudiante eliminado");
             }
         } catch (Exception e) {
-            notificadorMensaje.mostrarMensaje("Error al eliminar el estudiante");
+            notificadorMensajes.mostrarMensaje("Error al eliminar el estudiante");
         }
     }
 
@@ -110,18 +115,18 @@ public class ControladorEstudiantes {
 
                 iEstudiantes.actualizarEstudiante(idEstudiante, estudianteActualizado);
 
-                notificadorMensaje.mostrarMensaje("Estudiante actualizado con éxito");
+                notificadorMensajes.mostrarMensaje("Estudiante actualizado con éxito");
                 iEstudiantes.imprimirDato();
 
             } else {
-                notificadorMensaje.mostrarMensaje("No se encontró el estudiante con ID: " + idEstudiante);
+                notificadorMensajes.mostrarMensaje("No se encontró el estudiante con ID: " + idEstudiante);
             }
 
         } catch (NumberFormatException ex) {
-            notificadorMensaje.mostrarMensaje("ID o Codigo inválido. Verifica los datos numéricos.");
+            notificadorMensajes.mostrarMensaje("ID o Codigo inválido. Verifica los datos numéricos.");
         } catch (Exception e) {
             e.printStackTrace();
-            notificadorMensaje.mostrarMensaje("Error al actualizar el estudiante");
+            notificadorMensajes.mostrarMensaje("Error al actualizar el estudiante");
         }
     }
 

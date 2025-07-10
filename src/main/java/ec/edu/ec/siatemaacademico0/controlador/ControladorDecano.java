@@ -7,6 +7,7 @@ package ec.edu.ec.siatemaacademico0.controlador;
 import ec.edu.ec.siatemaacademico0.decano.Decano;
 import ec.edu.ec.siatemaacademico0.decano.Decanos;
 import ec.edu.ec.siatemaacademico0.decano.IDecanos;
+import ec.edu.ec.siatemaacademico0.vista.NotificadorMensajes;
 import ec.edu.ec.siatemaacademico0.vista.VDecano;
 
 /**
@@ -15,22 +16,26 @@ import ec.edu.ec.siatemaacademico0.vista.VDecano;
  */
 public class ControladorDecano {
 
+    public static void procesoBuscarPersonaS() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     private VDecano vistaDecano;
-    private NotificadorMensaje notificarMensaje;
-    private IDecanos iDecano;
+    private NotificadorMensajes notificarMensaje;
+    private IDecanos iDecanos;
 
     public ControladorDecano(VDecano vistaDecano) {
         this.vistaDecano = vistaDecano;
-        this.notificarMensaje = new NotificadorMensaje();
-        this.iDecano = new Decanos(10);
+        this.notificarMensaje = new NotificadorMensajes();
+        this.iDecanos = new Decanos(10);
     }
 
     public void procesoControladorDecano() {
         try {
             String nombreDecano = vistaDecano.getNombreProfesor();
-            String correoPersonalDecano = vistaDecano.getCorreoPersonal();
-            String cedulaDecano = vistaDecano.getCedula();
-            String correoInstitucionalDecano = vistaDecano.getCorreoInstitucional();
+            String correoPersonalDecanos = vistaDecano.getCorreoPersonal();
+            String cedulaDecanos = vistaDecano.getCedula();
+            String correoInstitucionalDecanos = vistaDecano.getCorreoInstitucional();
             double sueldoDecano = Double.parseDouble(vistaDecano.getSuledo());
             int idDecano = Integer.parseInt(vistaDecano.getId());
             String nivelJerarquico = vistaDecano.getNivelJerarquico();
@@ -38,55 +43,55 @@ public class ControladorDecano {
             Decano nuevoDecano = new Decano(
                     nivelJerarquico,
                     sueldoDecano,
-                    correoInstitucionalDecano,
+                    correoInstitucionalDecanos,
                     nombreDecano,
                     idDecano,
                     nombreDecano,
-                    cedulaDecano);
-            boolean agregar = iDecano.AgregarDecanos(nuevoDecano);
+                    cedulaDecanos);
+            boolean agregar = iDecanos.AgregarDecanos(nuevoDecano);
             if (agregar == true) {
-                notificarMensaje.mostrarMensaje("Profesor Agregado Exito");
-                iDecano.imprimirDatos();
+                notificarMensaje.mostrarMensajes("Profesor Agregado Exito");
+                iDecanos.imprimirDatos();
             }
         } catch (Exception e) {
             e.printStackTrace();
-            notificarMensaje.mostrarMensaje("Error al agregar el profesor");
+            notificarMensaje.mostrarMensajes("Error al agregar el profesor");
         }
     }
 
     public void procesoBuscarDecano() {
         try {
             int idDecano = Integer.parseInt(vistaDecano.getBuscar());
-            boolean decanoBuscado = iDecano.buscarProfesor(idDecano);
+            boolean decanoBuscado = iDecanos.buscarProfesor(idDecano);
             if(decanoBuscado == true){
-                notificarMensaje.mostrarMensaje("Decano encontrado");
+                notificarMensaje.mostrarMensajes("Decano encontrado");
             }else{
-                notificarMensaje.mostrarMensaje("Decano no encontrado");
+                notificarMensaje.mostrarMensajes("Decano no encontrado");
             }            
         } catch (Exception e) {
-            notificarMensaje.mostrarMensaje("Error en el codigo");
+            notificarMensaje.mostrarMensajes("Error en el codigo");
         }
     }
 
     public void procesoControladorEliminarProfesor() {
         try {
             int idDecano = Integer.parseInt(vistaDecano.getBuscar());
-            boolean profesorBuscado = iDecano.buscarProfesor(idDecano);
+            boolean profesorBuscado = iDecanos.buscarProfesor(idDecano);
             //Profesor eliminarProfesor = new Profesor(0," "," ",  0, " ", " ");
             if (profesorBuscado == true) {
-                iDecano.eliminarDecano(idDecano);
-                notificarMensaje.mostrarMensaje("Decano eliminado");
+                iDecanos.eliminarDecano(idDecano);
+                notificarMensaje.mostrarMensajes("Decano eliminado");
             }
         } catch (Exception e) {
-            notificarMensaje.mostrarMensaje("Error al eliminar el Decano");
+            notificarMensaje.mostrarMensajes("Error al eliminar el Decano");
         }
     }
 
     public void procesoControladorActualizarProfesor() {
         try {
-            int iDProfesor = Integer.parseInt(vistaDecano.getBuscar());
+            int iDProfesor = Integer.parseInt(vistaDecano.buscar());
 
-            boolean existe = iDecano.buscarProfesor(iDProfesor);
+            boolean existe = iDecanos.buscarProfesor(iDProfesor);
             if (existe) {
                 String nombreDecano = vistaDecano.getNombreProfesor();
                 String correoPersonalDecano = vistaDecano.getCorreoPersonal();
@@ -105,19 +110,19 @@ public class ControladorDecano {
                         nombreDecano,
                         cedulaDecano);
 
-                iDecano.actualizarDecano(iDProfesor, decanoActualizado);
+                iDecanos.actualizarDecano(iDProfesor, decanoActualizado);
 
-                notificarMensaje.mostrarMensaje("Profesor actualizado con éxito");
+                notificarMensaje.mostrarMensajes("Profesor actualizado con éxito");
 
             } else {
-                notificarMensaje.mostrarMensaje("No se encontró el decano con ID: " + iDProfesor);
+                notificarMensaje.mostrarMensajes("No se encontró el decano con ID: " + iDProfesor);
             }
 
         } catch (NumberFormatException ex) {
-            notificarMensaje.mostrarMensaje("ID o Sueldo inválido. Verifica los datos numéricos.");
+            notificarMensaje.mostrarMensajes("ID o Sueldo inválido. Verifica los datos numéricos.");
         } catch (Exception e) {
             e.printStackTrace();
-            notificarMensaje.mostrarMensaje("Error al actualizar el profesor");
+            notificarMensaje.mostrarMensajes("Error al actualizar el profesor");
         }
     }
 

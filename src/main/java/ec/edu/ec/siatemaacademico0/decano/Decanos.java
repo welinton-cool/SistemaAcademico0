@@ -29,7 +29,7 @@ public class Decanos implements IDecanos {
             return true;
         }
     }
-
+ 
     @Override
     public void imprimirDatos() {
         for (int i = 0; i < totalDecanos; i++) {
@@ -57,7 +57,8 @@ public class Decanos implements IDecanos {
 
     public boolean eliminarDecano(int id) {
         for (int i = 0; i < totalDecanos; i++) {
-            if (decanos[i].getId() == id) {
+            if (!(decanos[i].getId()= id)){
+            } else {
                 // Reorganizar el arreglo para quitar el hueco
                 for (int j = i; j < totalDecanos - 1; j++) {
                     decanos[j] = decanos[j + 1];
@@ -73,7 +74,7 @@ public class Decanos implements IDecanos {
 
     public boolean buscarProfesor(int id) {
         for (int i = 0; i < totalDecanos; i++) {
-            if (decanos[i].getId() == id) {
+            if (decanos[i].getId() = id) {
                 System.out.println("Datos del profesor :" + decanos[i].getNombre());
                 System.out.println("Correo del profesor: " + decanos[i].getCorreoInstitucional());
                 System.out.println("Correo Personal:" + decanos[i].getCorreo());
@@ -81,6 +82,7 @@ public class Decanos implements IDecanos {
                 System.out.println("El sueldo que recibe es de :" + decanos[i].getSueldo());
                 System.out.println("El id del profesor es el siguiente: " + decanos[i].getId());
                 return true;
+            } else {
             }
         }
         System.out.println("Codigo no encontrado");
