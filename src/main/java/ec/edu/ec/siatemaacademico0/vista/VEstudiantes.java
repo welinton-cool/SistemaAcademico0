@@ -302,7 +302,7 @@ public class VEstudiantes extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIdActionPerformed
 
     private void btmActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmActualizarActionPerformed
-        ControladorEstudiante.procesoControladorActualizarEstudiantes();               // TODO add your handling code here:
+        ControladorEstudiantes.controladorEstudisnates();// TODO add your handling code here:
     }//GEN-LAST:event_btmActualizarActionPerformed
 
     private void btmBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmBuscarActionPerformed
@@ -319,11 +319,11 @@ public class VEstudiantes extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCedulaActionPerformed
 
     private void btmAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmAgregarActionPerformed
-        ControladorEstudiante.procesoControladorEstudiantes();// TODO add your handling code here:
+        ControladorEstudiantes.controladorEstudisnates();// TODO add your handling code here:
     }//GEN-LAST:event_btmAgregarActionPerformed
 
     private void btmEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmEliminarActionPerformed
-        ControladorEstudiante.procesoControladorEliminarEstudiantes();             // TODO add your handling code here:
+        ControladorEstudiantes.controladorEstudisnates();             // TODO add your handling code here:
     }//GEN-LAST:event_btmEliminarActionPerformed
 
     private void btmAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btmAgregarMouseClicked

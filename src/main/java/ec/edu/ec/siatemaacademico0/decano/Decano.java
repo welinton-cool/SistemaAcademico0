@@ -10,6 +10,7 @@ import ec.edu.ec.siatemaacademico0.personalacademico.PersonalAcademico;
  *
  * @author HP
  */
+
 public class Decano extends PersonalAcademico {
     private String nivelJerarquico; 
 
@@ -18,8 +19,8 @@ public class Decano extends PersonalAcademico {
         this.nivelJerarquico = nivelJerarquico;
     }
 
- 
     
+
     public String getNivelJerarquico() {
         return nivelJerarquico;
     }
@@ -34,26 +35,6 @@ public class Decano extends PersonalAcademico {
         return "Decanos{" +
                 "nivelJerarquico= " + nivelJerarquico +" " + super.toString() +
                 '}';
-    }
-
-    String getId() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    String getCedula() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    String getCorreo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    String getCorreoInstitucional() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    String getNombre() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
 

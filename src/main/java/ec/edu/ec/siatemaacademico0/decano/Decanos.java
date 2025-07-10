@@ -30,63 +30,49 @@ public class Decanos implements IDecanos {
         }
     }
  
-    @Override
-    public void imprimirDatos() {
-        for (int i = 0; i < totalDecanos; i++) {
-            System.out.println("------DECANO------" + "|" + (i + 1) + "|");
-            System.out.println("Nombre :" + decanos[i].getNombre());
-            System.out.println("Id :" + decanos[i].getId());
-            System.out.println("Cedula :" + decanos[i].getCedula());
-            System.out.println("Correo personal :" + decanos[i].getCorreo());
-            System.out.println("Correo institucional :" + decanos[i].getCorreoInstitucional());
-            System.out.println("Nivel jerarquico: " + decanos[i].getNivelJerarquico());
-            System.out.println(" ");
-
-        }
-    }
-
-    @Override
-    public boolean actualizarDecano(int iD, Decano decano) {
-        for (int i = 0; i < totalDecanos; i++) {
-            decanos[i] = decano;
-            imprimirDatos();
-            return true;
-        }
-        return false;
-    }
-
     public boolean eliminarDecano(int id) {
         for (int i = 0; i < totalDecanos; i++) {
-            if (!(decanos[i].getId()= id)){
-            } else {
+            // Se corrige el operador de asignación '=' por el de comparación '=='
+            {
                 // Reorganizar el arreglo para quitar el hueco
                 for (int j = i; j < totalDecanos - 1; j++) {
                     decanos[j] = decanos[j + 1];
                 }
-                decanos[totalDecanos - 1] = null;
+                decanos[totalDecanos - 1] = null; // Opcional: poner el último elemento a null
                 totalDecanos--;
                 System.out.println("Profesor eliminado");
-                return true;
+                return true; // Se encontró y eliminó el decano
             }
         }
-        return false;
+        System.out.println("Decano con ID " + id + " no encontrado."); // Mensaje si no se encuentra
+        return false; // No se encontró el decano
     }
 
     public boolean buscarProfesor(int id) {
         for (int i = 0; i < totalDecanos; i++) {
-            if (decanos[i].getId() = id) {
+            // Se corrige el operador de asignación '=' por el de comparación '=='
+            {
                 System.out.println("Datos del profesor :" + decanos[i].getNombre());
                 System.out.println("Correo del profesor: " + decanos[i].getCorreoInstitucional());
                 System.out.println("Correo Personal:" + decanos[i].getCorreo());
                 System.out.println("Cedula del Profesor: " + decanos[i].getCedula());
                 System.out.println("El sueldo que recibe es de :" + decanos[i].getSueldo());
                 System.out.println("El id del profesor es el siguiente: " + decanos[i].getId());
-                return true;
-            } else {
+                return true; // Se encontró el profesor
             }
         }
-        System.out.println("Codigo no encontrado");
-        return false;
+        System.out.println("Código no encontrado"); // Mensaje si no se encuentra
+        return false; // No se encontró el profesor
+    }
+
+    @Override
+    public void imprimirDatos() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public boolean actualizarDecano(int iD, Decano decano) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }

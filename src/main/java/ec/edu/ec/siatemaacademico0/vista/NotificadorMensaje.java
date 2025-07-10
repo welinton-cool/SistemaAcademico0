@@ -8,6 +8,6 @@ package ec.edu.ec.siatemaacademico0.vista;
  *
  * @author HP
  */
-public class NotificadorMensajes {
+public class NotificadorMensaje {
     
 }

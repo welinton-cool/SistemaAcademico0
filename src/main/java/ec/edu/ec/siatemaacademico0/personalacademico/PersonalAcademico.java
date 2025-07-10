@@ -21,9 +21,9 @@ public class PersonalAcademico extends Empleado {
 
     
     // public abstract boolean verificarCedula(); 
-    
-    @Override
-    public String toString() {
-        return "personalAcademico{" + super.toString()+'}';
-    }
+/*
+@Override
+public String toString() {
+return "personalAcademico{" + super.toString()+'}';
+}*/
    

@@ -219,12 +219,13 @@ public class VDecano extends javax.swing.JFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
-        controladorPersonalServicios.procesoEliminarPersonaS();
+        ControladorPersonalAcademico.procesoControladorPersonalAcademico();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         // TODO add your handling code here:
-        controladorPersonalServicios.procesoActualizarPersonaS();
+    
+;
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
