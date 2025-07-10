@@ -5,20 +5,21 @@
 package ec.edu.ec.siatemaacademico0.vista;
 
 import ec.edu.ec.siatemaacademico0.controlador.ControladorProfesores;
+import ec.edu.ec.siatemaacademico0.profesores.IProfesores;
 
 /**
  *
  * @author KARLA
  */
 public class VProfesores extends javax.swing.JFrame {
-
-    private ControladorProfesores controladorProfesor;
+private ControladorProfesores controladorProfesor;
+    private IProfesores iProfesores;
     /**
      * Creates new form VProfesores
      */
     public VProfesores() {
         initComponents();
-        controladorProfesor = new ControladorProfesores(this);
+       controladorProfesor = new ControladorProfesores(this);
     }
 
     /**
@@ -30,49 +31,386 @@ public class VProfesores extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblEscalafon = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        lblCorreoPersonal = new javax.swing.JLabel();
+        lblCedula = new javax.swing.JLabel();
+        lblCorreoInstitucional = new javax.swing.JLabel();
+        lblSueldo = new javax.swing.JLabel();
+        lblID = new javax.swing.JLabel();
+        txtBuscar = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
+        txtCorreoPersonal = new javax.swing.JTextField();
+        txtId = new javax.swing.JTextField();
+        txtSueldo = new javax.swing.JTextField();
+        btmBuscar = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        txtCedula = new javax.swing.JTextField();
+        cmbEscalafon = new javax.swing.JComboBox<>();
+        btmAgregar = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        txtCorreoInstitucional = new javax.swing.JTextField();
+        lblEscalafonDos = new javax.swing.JLabel();
+        lblSueldoDos = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        lblNombreDos = new javax.swing.JLabel();
+        lblCorreoPersonalDos = new javax.swing.JLabel();
+        lblCorreoInstitucionalDos = new javax.swing.JLabel();
+        lblIdDos = new javax.swing.JLabel();
+        lblCedulaDos = new javax.swing.JLabel();
+        btnLimpiar = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblEscalafon.setText("Escalafon");
+
+        lblNombre.setText("Nombre");
+
+        lblCorreoPersonal.setText("Correo Personal");
+
+        lblCedula.setText("Cedula");
+
+        lblCorreoInstitucional.setText("Correo Institucional");
+
+        lblSueldo.setText("Sueldo");
+
+        lblID.setText("ID");
+
+        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscarActionPerformed(evt);
+            }
+        });
+
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreActionPerformed(evt);
+            }
+        });
+
+        btmBuscar.setText("BUSCAR");
+        btmBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btmBuscarActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel8.setText("PROFESOR");
+
+        txtCedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCedulaActionPerformed(evt);
+            }
+        });
+
+        cmbEscalafon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ESCALAFON", "PRINCIPAL", "AGREGADO", "AUXILIAR", " " }));
+        cmbEscalafon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbEscalafonActionPerformed(evt);
+            }
+        });
+
+        btmAgregar.setText("AGREGAR");
+        btmAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btmAgregarActionPerformed(evt);
+            }
+        });
+
+        btnActualizar.setText("ACTUALIZAR");
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
+
+        btnEliminar.setText("ELIMINAR");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+
+        lblEscalafonDos.setText("____________________________");
+
+        lblSueldoDos.setText("_____________________________");
+
+        jLabel11.setText("DATOS DEL PROFESOR BUSCADO");
+
+        lblNombreDos.setText("_____________________________");
+
+        lblCorreoPersonalDos.setText("_____________________________");
+
+        lblCorreoInstitucionalDos.setText("_____________________________");
+
+        lblIdDos.setText("______________________________");
+
+        lblCedulaDos.setText("_____________________________");
+
+        btnLimpiar.setText("LIMPIAR");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btmAgregar)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(btmBuscar)
+                                                .addComponent(lblCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(lblSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(lblID, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(lblCorreoInstitucional, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(lblCorreoPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGap(27, 27, 27))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(lblEscalafon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGap(62, 62, 62)))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtCorreoPersonal, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtCedula, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtCorreoInstitucional, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtSueldo, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtBuscar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addGap(19, 19, 19)
+                                            .addComponent(cmbEscalafon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txtId, javax.swing.GroupLayout.Alignment.LEADING)))
+                                .addComponent(btnEliminar)))
+                        .addGap(94, 94, 94))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnActualizar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnLimpiar))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 6, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblSueldoDos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(lblCorreoPersonalDos, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(lblNombreDos, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(lblCedulaDos, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblCorreoInstitucionalDos, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(57, 57, 57))
+                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(57, 57, 57))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lblEscalafonDos, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(127, 127, 127))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblIdDos, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(jLabel8)
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNombreDos))
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblCorreoPersonal)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txtCorreoPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblCorreoPersonalDos)))
+                        .addGap(31, 31, 31))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btmBuscar)
+                            .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11))
+                        .addGap(39, 39, 39)
+                        .addComponent(lblNombre)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCedula)
+                    .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCedulaDos))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCorreoInstitucional, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCorreoInstitucional)
+                    .addComponent(lblCorreoInstitucionalDos))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblSueldo)
+                    .addComponent(txtSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSueldoDos))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEscalafon)
+                    .addComponent(cmbEscalafon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblEscalafonDos))
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblID)
+                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblIdDos, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btmAgregar)
+                    .addComponent(btnEliminar)
+                    .addComponent(btnActualizar)
+                    .addComponent(btnLimpiar))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCedulaActionPerformed
+
+    private void btmBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmBuscarActionPerformed
+        // TODO add your handling code here:
+        controladorProfesor.procesoBuscarProfesor();
+    }//GEN-LAST:event_btmBuscarActionPerformed
+
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreActionPerformed
+
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnActualizarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+        controladorProfesor.procesoControladorEliminarProfesor();
+        txtBuscar.setText(" ");
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void cmbEscalafonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbEscalafonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbEscalafonActionPerformed
+
+    private void btmAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmAgregarActionPerformed
+        // TODO add your handling code here:
+        controladorProfesor.procesoControladorProfesor(); 
+        txtNombre.setText(" ");
+        txtCedula.setText(" ");
+        txtCorreoInstitucional.setText(" ");
+        txtCorreoPersonal.setText(" ");
+        //txtId.setText(" ");
+        txtSueldo.setText(" ");
+    }//GEN-LAST:event_btmAgregarActionPerformed
+
+    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        // TODO add your handling code here:
+        txtNombre.setText(null);
+        txtCedula.setText(null);
+        txtCorreoInstitucional.setText(null);
+        txtId.setText(null);
+        txtCorreoPersonal.setText(null);
+        txtSueldo.setText(null);
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    public String getNombreProfesor() {
+        return txtNombre.getText();
+    }
+
+    public String getCorreoPersonal() {
+        return txtCorreoPersonal.getText();
+    }
+
+    public String getCedula() {
+        return txtCedula.getText();
+    }
+
+    public String getCorreoInstitucional() {
+        return txtCorreoInstitucional.getText();
+    }
+
+    public String getSuledo() {
+        return txtSueldo.getText();
+    }
+
+    public String getId() {
+        return txtId.getText();
+    }
+
+    public String getEscalafon() {
+        return (String) cmbEscalafon.getSelectedItem();
+    }
+
+    public String getBuscar() {
+        return txtBuscar.getText();
+    }
+
+    public void setNombre(String nombre){
+        lblNombreDos.setText(nombre);
+    }
     /**
      * @param args the command line arguments
      */
-    public String getNombreProfesor(){
-        return txtNombre.getText();
-    }
-    
-    public String getCorreoPersonal(){
-        return txtCorreoPersonal.getText();
-    }
-    
-    public String getCedula(){
-        return txtCedula.getText();
-    }
-    
-    public String getCorreoInstitucional(){
-        return txtCorreoInstitucional.getText();
-    }
-    
-    public String getSuledo(){
-        return txtSueldo.getText();
-    }
-    
-    public String getEscalafon(){
-        return txtEscalafon.getText();
-    }
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btmAgregar;
+    private javax.swing.JButton btmBuscar;
+    private javax.swing.JButton btnActualizar;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnLimpiar;
+    private javax.swing.JComboBox<String> cmbEscalafon;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel lblCedula;
+    private javax.swing.JLabel lblCedulaDos;
+    private javax.swing.JLabel lblCorreoInstitucional;
+    private javax.swing.JLabel lblCorreoInstitucionalDos;
+    private javax.swing.JLabel lblCorreoPersonal;
+    private javax.swing.JLabel lblCorreoPersonalDos;
+    private javax.swing.JLabel lblEscalafon;
+    private javax.swing.JLabel lblEscalafonDos;
+    private javax.swing.JLabel lblID;
+    private javax.swing.JLabel lblIdDos;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblNombreDos;
+    private javax.swing.JLabel lblSueldo;
+    private javax.swing.JLabel lblSueldoDos;
+    private javax.swing.JTextField txtBuscar;
+    private javax.swing.JTextField txtCedula;
+    private javax.swing.JTextField txtCorreoInstitucional;
+    private javax.swing.JTextField txtCorreoPersonal;
+    private javax.swing.JTextField txtId;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtSueldo;
     // End of variables declaration//GEN-END:variables
 }

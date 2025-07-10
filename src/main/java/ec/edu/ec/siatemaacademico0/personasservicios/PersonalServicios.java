@@ -4,6 +4,8 @@
  */
 package ec.edu.ec.siatemaacademico0.personasservicios;
 
+import ec.edu.ec.siatemaacademico0.empleados.Empleado;
+
 /**
  *
  * @author KARLA
