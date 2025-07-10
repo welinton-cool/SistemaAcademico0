@@ -4,18 +4,16 @@
  */
 package ec.edu.ec.siatemaacademico0.vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author HP
  */
 public class NotificadorMensajes {
 
-    public void mostrarMensajes(String decano_encontrado) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void mostrarMensaje(String error_al_agregar_el_estudiante) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+   public void mostrarMensaje(String mensaje){
+        JOptionPane.showMessageDialog(null, mensaje, "informacion", JOptionPane.INFORMATION_MESSAGE);
     }
     
 }
