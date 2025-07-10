@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
  */
 public class VentanaSeleccion extends javax.swing.JFrame {
 
+    //private JComboBox<String> cmbEleccion;
     /**
      * Creates new form VentanaSeleccion
      */
@@ -59,21 +60,50 @@ public class VentanaSeleccion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtRol = new javax.swing.JLabel();
+        cmbEleccion = new javax.swing.JComboBox<>();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        txtRol.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        txtRol.setText("ELIJA SU ROL EN LA INSTITUCION");
+
+        cmbEleccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Personal Servicio", "Persona Invitada", "Estudiante", "Profesor", "Decano", "Personal Institucional", "Personal Academico", "Personas", "Empleados", " " }));
+        cmbEleccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbEleccionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
+                .addComponent(txtRol, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(101, 101, 101)
+                .addComponent(cmbEleccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(txtRol)
+                .addGap(18, 18, 18)
+                .addComponent(cmbEleccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmbEleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbEleccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbEleccionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -81,5 +111,7 @@ public class VentanaSeleccion extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cmbEleccion;
+    private javax.swing.JLabel txtRol;
     // End of variables declaration//GEN-END:variables
 }
