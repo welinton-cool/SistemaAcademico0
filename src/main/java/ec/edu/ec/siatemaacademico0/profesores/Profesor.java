@@ -25,6 +25,8 @@ public class Profesor extends PersonalAcademico{
     public void setEscalafon(Escalafon escalafon) {
         this.escalafon = escalafon;
     }
+
+    
  
   
 

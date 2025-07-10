@@ -11,6 +11,7 @@ package ec.edu.ec.siatemaacademico0.profesores;
 public class Profesores implements IProfesores{
     
      private Profesor[] profesores;
+     
     private int totalProfesores;
 
     public Profesores(int dimension) {
