@@ -13,24 +13,13 @@ import ec.edu.ec.siatemaacademico0.personalacademico.PersonalAcademico;
 public class Decano extends PersonalAcademico {
     private String nivelJerarquico; 
 
-    public Decano(String nivelJerarquico, double sueldo, String correoInstitucional, int id, String nombre, String correoPersonal, String cedula) {
-        super(sueldo, correoInstitucional, id, nombre, correoPersonal, cedula);
+    public Decano(String nivelJerarquico, double sueldo, String correoInstitucional, String nombre, int id, String correo, String cedula) {
+        super(sueldo, correoInstitucional, nombre, id, correo, cedula);
         this.nivelJerarquico = nivelJerarquico;
     }
 
  
     
-
-  
-        this.nivelJerarquico = nivelJerarquico;
-
-    public Decano(String nivelJerarquico, double sueldoDecano, String correoInstitucionalDecano, String nombreDecano, int idDecano, String nombreDecano0, String cedulaDecano) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
-
-    
-
     public String getNivelJerarquico() {
         return nivelJerarquico;
     }

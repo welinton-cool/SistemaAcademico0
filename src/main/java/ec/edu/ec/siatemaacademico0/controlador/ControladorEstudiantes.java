@@ -64,7 +64,7 @@ public class ControladorEstudiantes {
             Estudiante estudianteBuscado = iEstudiantes.buscarEstudiante(iDEstudiante);
             if (estudianteBuscado != null) {
                  notificadorMensajes.mostrarMensaje("Estudiante encontrado");
-                 vistaEstudiantes.setCedula(estudianteBuscado.getCedula());
+                 vistaEstudiantes.setCedulas(estudianteBuscado.getId());
                  vistaEstudiantes.setCodigo(String.valueOf(estudianteBuscado.getCodigo()));
                  vistaEstudiantes.setCorreo(estudianteBuscado.getCorreo());
                  vistaEstudiantes.setCorreoI(estudianteBuscado.getCorreoInstitucional());
@@ -72,6 +72,7 @@ public class ControladorEstudiantes {
                  vistaEstudiantes.setNombre(estudianteBuscado.getNombre());
                 
                 
+                 
             }else{
                 notificadorMensajes.mostrarMensaje("Estudiante no encontrado");
             }

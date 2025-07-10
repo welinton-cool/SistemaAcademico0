@@ -25,18 +25,9 @@ public class Estudiante extends PersonaInstitucional{
         this.codigo = codigo;
     }
 
-    @Override
     public String toString() {
         return "Estudiante{" + "codigo=" + codigo + '}';
-    }
-
-    public Object getId() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    
-    
-    
+    } 
 }
 
 

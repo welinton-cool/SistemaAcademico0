@@ -334,43 +334,59 @@ public class VEstudiantes extends javax.swing.JFrame {
      * @param args the command line arguments
      */
  
-
-    public String getBuscar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+ public String getNombre(){
+        return txtNombre.getText();
     }
-
-    public String getNombre() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+    public String getCedula(){
+        return txtCedula.getText();
     }
-
-    public String getCorreoPersonal() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+    public String getId(){
+        return txtId.getText();
     }
-
-    public String getCedula() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+    public String getCorreoPersonal(){
+        return txtCorreoPersonal.getText();
     }
-
-    public String getCorreoInstitucional() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+    public String getCorreoInstitucional(){
+        return txtCorreoInstitucional.getText();
     }
-
-    public String getId() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+    public String getCodigo(){
+        return txtCodigo.getText();
     }
-
-    public String getCodigo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+    public String getBuscar(){
+        return txtBuscar.getText();
     }
+  
 
-    public void setId(String valueOf) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void setNombre(String nombre){
+        lblNombreDos.setText(nombre);
     }
-
-    public void setCodigo(String valueOf) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+    public void setCedula(String cedula){
+        lblCedulaDos.setText(cedula);
     }
-
+    
+    public void setCodigo(String codigo){
+        lblCodigoDos.setText(codigo);
+    }
+    
+    public void setCorreoI(String CorreoI){
+        lblCorreoInstitucionalDos.setText(CorreoI);
+    }
+    
+    public void setCorreo(String correo){
+        lblCorreoPersonalDos.setText(correo);
+    }
+    
+    public void setId(String id){
+        lblIdDos.setText(id);
+    }
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btmActualizar;
     private javax.swing.JButton btmAgregar;
@@ -399,4 +415,8 @@ public class VEstudiantes extends javax.swing.JFrame {
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
+
+    public void setCedulas(Object id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
