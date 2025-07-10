@@ -8,6 +8,6 @@ package ec.edu.ec.siatemaacademico0.controlador;
  *
  * @author HP
  */
-public class ControladorPersonalServicios {
+public class ControladorEstudiantes {
     
 }
