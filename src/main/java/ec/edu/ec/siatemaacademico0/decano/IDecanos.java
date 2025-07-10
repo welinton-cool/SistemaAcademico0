@@ -8,6 +8,10 @@ package ec.edu.ec.siatemaacademico0.decano;
  *
  * @author HP
  */
-public class IDecanos {
-    
+public interface IDecanos {
+    public boolean AgregarDecanos(Decano decano);
+    public void imprimirDatos ();
+    public boolean actualizarDecano (int iD, Decano decano);
+    public boolean eliminarDecano (int iD);
+    public boolean buscarProfesor(int id);
 }

@@ -4,10 +4,25 @@
  */
 package ec.edu.ec.siatemaacademico0.personalacademico;
 
+import ec.edu.ec.siatemaacademico0.empleados.Empleado;
+
 /**
  *
  * @author HP
  */
-public class PersonalAcademico {
+public class PersonalAcademico extends Empleado {
+
+    public PersonalAcademico(double sueldo, String correoInstitucional, String nombre, int id, String correo, String cedula) {
+        super(sueldo, correoInstitucional, nombre, id, correo, cedula);
+    }
+    
+    // public abstract boolean verificarCedula(); 
+    
+    @Override
+    public String toString() {
+        return "personalAcademico{" + super.toString()+'}';
+    }
+    
+    
     
 }
